@@ -27,6 +27,15 @@
                 let address = document.getElementById('address').value;
                 var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+                localStorage.setItem('name :', name);
+                localStorage.setItem('number :', mobileno);
+                localStorage.setItem('email :', mail.value);
+                localStorage.setItem('username :', username);
+                localStorage.setItem('password :', password);
+                localStorage.setItem('DateOfBirth :', DOB);
+                localStorage.setItem('gender :', gender);
+                localStorage.setItem('city :', city);
+                localStorage.setItem('address :', address);
 
 
                 console.log(userData);
@@ -47,7 +56,7 @@
                     document.getElementById('label').innerHTML = "invalid mobileno";
                 } else if (!mail.value.match(validRegex)) {
                     document.getElementById('label').innerHTML = "invalid email-id";
-                } else if (username == "" || username.length >= "6") {
+                } else if (username == "" || username.length >= "10") {
                     document.getElementById('label').innerHTML = "invalid username name";
                 } else if (password == "" || password.length <= "7") {
                     document.getElementById('label').innerHTML = "invalid password";
@@ -67,6 +76,7 @@
                                 "password": password, "DOB": DOB, "gender": gender, "city": city,
                                 "address": address
                             });
+
                         return document.getElementById('label').innerHTML = "unsername registered";
                     } else {
                         return document.getElementById('label').innerHTML = "unsername already taken";
@@ -78,6 +88,8 @@
                      + 'password =' + password + 'DOB =' + DOB + 'gender =' + gender + "city =" + city +
                      'address =' + address); */
 
+                
+               
                 return;
 
 
@@ -125,7 +137,7 @@
                         <label for="gender"> Gender : </label>
                         <input type="radio" id="gender" name="gender" value="Male" checked>
                         <label for="gender"> Male </label>
-                        <input type="radio" id="gender" name="gender" value="Female">
+                        <input type="radio" id="gender1" name="gender" value="Female">
                         <label for="gender"> Female </label> <br> <br>
                     </div>
                     <div class="form2">
